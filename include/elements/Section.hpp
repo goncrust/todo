@@ -13,8 +13,8 @@ class Section : public Element {
 
   public:
     Section(const char *name);
-    std::string render(int depth);
     void addElement(Element *e);
+    std::string internal_render(int depth, int entry_depth);
 };
 
 #endif

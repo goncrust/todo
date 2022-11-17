@@ -1,11 +1,12 @@
 #include "elements/Section.hpp"
 
-Section::Section(const char *name) { this->name = name; }
+Section::Section(const char *name) : Element() { this->name = name; }
 
-std::string Section::render(int depth) {
-    std::string result = getDepthTab(depth) + "# " + this->name + "\n";
+std::string Section::internal_render(int depth, int entry_depth) {
+    std::string result =
+        getDepthTab(depth) + getDepthH(depth) + " " + this->name + "\n";
     for (Element *e : this->children) {
-        result += e->render(depth + 1);
+        result += e->internal_render(depth + 1, 0);
     }
     return result;
 }

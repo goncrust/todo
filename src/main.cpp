@@ -48,5 +48,5 @@ int main() {
     webdev.addEntry(&react);
     future.addElement(&gradle);
 
-    std::cout << now.render(0) << future.render(0) << std::endl;
+    std::cout << now.render() << future.render() << std::endl;
 }

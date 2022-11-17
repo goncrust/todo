@@ -13,8 +13,8 @@ class Entry : public Element {
 
   public:
     Entry(const char *content);
-    std::string render(int depth);
     void addEntry(Entry *e);
+    std::string internal_render(int depth, int entry_depth);
 };
 
 #endif
