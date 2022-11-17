@@ -11,19 +11,21 @@ SOURCES := $(shell find $(SRC_PATH) -name *.cpp)
 #OBJS := $(SOURCES:%=$(BIN_PATH)/%.o)
 OBJS := $(patsubst %, $(BIN_PATH)/%.o, $(SOURCES))
 
-#includes
+# includes
 INCLUDE_PATH := include
 INCLUDE_FLAG := $(addprefix -I, $(INCLUDE_PATH))
 
-#flags
+# flags
 CPPFLAGS ?= $(INCLUDE_FLAG)
 
+# final target
 $(BUILD_PATH)/$(TARGET_EXEC): $(OBJS)
 	$(CXX) $(OBJS) -o $@ $(LDFLAGS)
 
+# build all dependencies
 $(BIN_PATH)/%.cpp.o: %.cpp
 	mkdir -p $(dir $@)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
-	
+
 clean:
 	$(RM) -r $(BUILD_PATH)

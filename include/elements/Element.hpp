@@ -4,9 +4,9 @@
 #include <string>
 
 class Element {
-  public:
   private:
-    virtual std::string render() = 0;
+  public:
+    virtual std::string render(int depth) = 0;
 };
 
 #endif
