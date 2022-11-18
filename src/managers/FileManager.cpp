@@ -1,4 +1,4 @@
-#include "app/FileManager.hpp"
+#include "managers/FileManager.hpp"
 
 FileManager::FileManager() { resetDir(); }
 
@@ -24,10 +24,12 @@ void FileManager::create_dir() {
 
 std::string FileManager::readConfigFile() {
     // TODO: implement
+    return "";
 }
 
 std::string FileManager::readDataFile() {
     // TODO: implement
+    return "";
 }
 
 void FileManager::writeDataFile(std::string data) {
