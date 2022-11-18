@@ -14,7 +14,7 @@ class Section : public Element {
   public:
     Section(const char *name);
     void addElement(Element *e);
-    std::string internal_render(int depth, int entry_depth);
+    std::string internalRender(int depth, int entry_depth);
 };
 
 #endif

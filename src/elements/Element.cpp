@@ -1,3 +1,3 @@
 #include "elements/Element.hpp"
 
-std::string Element::render() { return this->internal_render(0, 0); }
+std::string Element::render() { return this->internalRender(0, 0); }

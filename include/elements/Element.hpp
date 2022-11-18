@@ -7,7 +7,7 @@ class Element {
   private:
   public:
     std::string render();
-    virtual std::string internal_render(int depth, int entry_depth) = 0;
+    virtual std::string internalRender(int depth, int entry_depth) = 0;
 };
 
 #endif
