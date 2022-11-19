@@ -1,4 +1,6 @@
 #include "managers/FileManager.hpp"
+#include <fstream>
+#include <string>
 
 FileManager::FileManager() { resetDir(); }
 
@@ -9,9 +11,13 @@ void FileManager::setDir(std::string dir) {
     create_dir();
 }
 
+std::string FileManager::getDataFile() { return this->dir + "/data"; }
+
+std::string FileManager::getConfigFile() { return this->dir + "/config"; }
+
 void FileManager::resetDir() {
     dir = getpwuid(getuid())->pw_dir;
-    dir += "/.todo/";
+    dir += "/.todo";
     create_dir();
 }
 
@@ -22,16 +28,26 @@ void FileManager::create_dir() {
     }
 }
 
-std::string FileManager::readConfigFile() {
-    // TODO: implement
-    return "";
+std::string FileManager::readFile(std::string path) {
+    std::ifstream file = std::ifstream(path);
+
+    file.seekg(0, std::ios_base::end);
+    int end = file.tellg();
+    // initialize string memory
+    std::string result = std::string(end, ' ');
+
+    file.seekg(0);
+    file.read(&result[0], end);
+
+    return result;
 }
 
-std::string FileManager::readDataFile() {
-    // TODO: implement
-    return "";
-}
+std::string FileManager::readConfigFile() { return readFile(getConfigFile()); }
+
+std::string FileManager::readDataFile() { return readFile(getDataFile()); }
 
 void FileManager::writeDataFile(std::string data) {
-    // TODO: implement
+    std::ofstream file = std::ofstream(getDataFile());
+    file << data;
+    file.close();
 }

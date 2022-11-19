@@ -5,6 +5,7 @@ DataManager::DataManager() { this->file_manager = FileManager(); }
 
 TodoList DataManager::importTodoList() {
     TodoList todo_list = TodoList();
+    std::string content = this->file_manager.readDataFile();
 
     // TODO: implement
 
