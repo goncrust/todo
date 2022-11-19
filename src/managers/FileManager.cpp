@@ -1,6 +1,4 @@
 #include "managers/FileManager.hpp"
-#include <fstream>
-#include <string>
 
 FileManager::FileManager() { resetDir(); }
 
