@@ -1,3 +1,13 @@
+/*
+ * todo (https://github.com/goncrust/todo)
+ *
+ * TodoList (Element) class (header).
+ *
+ * Copyright (c) 2022 by goncrust
+ * Released under the GPL v3.0
+ * https://github.com/goncrust/todo/blob/main/LICENSE
+ */
+
 #ifndef __TODOLIST_HPP__
 #define __TODOLIST_HPP__
 

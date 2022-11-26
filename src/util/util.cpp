@@ -1,3 +1,16 @@
+/*
+ * todo (https://github.com/goncrust/todo)
+ *
+ * Util.
+ * Useful functions used to select the appropriate ammount of space/symbol
+ * of each line.
+ * Note: Will likely be replaced by the Renderer(s).
+ *
+ * Copyright (c) 2022 by goncrust
+ * Released under the GPL v3.0
+ * https://github.com/goncrust/todo/blob/main/LICENSE
+ */
+
 #include "util/util.hpp"
 
 std::string getDepthTab(int depth) {
