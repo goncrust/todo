@@ -1,3 +1,13 @@
+/*
+ * todo (https://github.com/goncrust/todo)
+ *
+ * Section (Element) class.
+ *
+ * Copyright (c) 2022 by goncrust
+ * Released under the GPL v3.0
+ * https://github.com/goncrust/todo/blob/main/LICENSE
+ */
+
 #include "elements/Section.hpp"
 
 Section::Section(const char *name) : Element() { this->name = name; }
